@@ -23,5 +23,5 @@ jobs:
       - run: node -h
       - run: npm ls
 
-      - run: node print.js
+      - run: node print.js pullQuote.html
 
