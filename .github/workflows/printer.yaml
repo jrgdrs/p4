@@ -13,14 +13,13 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '20.x'
           check-latest: true
       
       - name: Install puppeteer
         run: npm install puppeteer
 
-      - name: Execute shell
-        run: |
-          - ls
-          - node -h
-          - npm -h
+      - run: ls
+      - run: node -h
+      - run: npm -h
+
