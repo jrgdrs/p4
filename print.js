@@ -2,8 +2,8 @@
 
 var puppeteer = require('puppeteer');
 var INFILE = process.argv[2];
-var PDFFILE = "." + process.argv[2] + '.pdf';
-var PNGFILE = "." + process.argv[2] + '.png';
+var PDFFILE =  process.argv[2] + '.pdf';
+var PNGFILE =  process.argv[2] + '.png';
 
 console.log( "print " + INFILE );
 console.log( "dirname: " + __dirname);
