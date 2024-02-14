@@ -21,5 +21,7 @@ jobs:
 
       - run: ls
       - run: node -h
-      - run: npm -h
+      - run: npm ls
+
+      - run: node print.js
 
