@@ -14,7 +14,7 @@ console.log( "dirname: " + __dirname);
     const page = await browser.newPage();
     await page.goto('file://' + __dirname + '/' + INFILE, { 'waitUntil' : 'domcontentloaded'});
     await page.emulateMediaType('print'); 
-    await page.pdf({ path: process.argv[2] + '.raw.pdf' });
+    //await page.pdf({ path: process.argv[2] + '.raw.pdf' });
 
     await page.pdf({ 
         path: PDFFILE, 
