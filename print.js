@@ -6,11 +6,13 @@ var PDFFILE = "." + process.argv[2] + '.pdf';
 var PNGFILE = "." + process.argv[2] + '.png';
 
 console.log( "print " + INFILE );
+console.log( "dirname: " + __dirname);
+
 
 ( async () => {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
-    await page.goto('file://' + process.cwd() + INFILE, { 'waitUntil' : 'domcontentloaded'});
+    await page.goto('file://' + __dirname + INFILE, { 'waitUntil' : 'domcontentloaded'});
     await page.emulateMediaType('print'); 
     await page.pdf({ 
         path: PDFFILE, 
