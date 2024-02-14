@@ -1,4 +1,4 @@
 # p4
 
 
-[pullQuote.html.png]pullQuote.html.png
+![Sample Image](pullQuote.html.png)
