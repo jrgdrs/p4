@@ -7,21 +7,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: Checkout
+      - name: Checkout Repo
         uses: actions/checkout@v4
-        with:
-          sparse-checkout: .
       
-      - name: Use Node
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           check-latest: true
       
-      - name: Install dependencies
+      - name: Install puppeteer
         run: npm install puppeteer
 
       - name: Execute shell
         run: |
           - ls
-          - node scripts/setup-npm-version.js
+          - node -h
+          - npm -h
