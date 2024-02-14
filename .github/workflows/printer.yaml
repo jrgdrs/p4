@@ -34,4 +34,8 @@ jobs:
           publish_dir: .
           exclude_assets: '.github,node_modules'
 
-
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v4.3.1
+        with:
+          name: my-artifact
+          path: pullQuote.html.pdf
