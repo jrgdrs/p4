@@ -14,6 +14,10 @@ console.log( "dirname: " + __dirname);
     const page = await browser.newPage();
     await page.emulateMediaType('print'); 
     await page.goto('file://' + __dirname + '/' + INFILE, { 'waitUntil' : 'networkidle0'});
+
+    await page.setViewport({ width: 1280, height: 960, deviceScaleFactor: 1 });
+    await page.screenshot({ path: PNGFILE });  
+    
     await page.pdf({ path: process.argv[2] + '.raw.pdf' });
 
     await page.pdf({ 
@@ -29,7 +33,6 @@ console.log( "dirname: " + __dirname);
             </div>
         `
     });
-    await page.setViewport({ width: 1280, height: 960, deviceScaleFactor: 1 });
-    await page.screenshot({ path: PNGFILE });  
+
     await browser.close();
 })();
