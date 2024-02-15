@@ -13,7 +13,7 @@ console.log( "dirname: " + __dirname);
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.emulateMediaType('print'); 
-    await page.goto('file://' + __dirname + '/' + INFILE, { 'waitUntil' : 'domcontentloaded'});
+    await page.goto('file://' + __dirname + '/' + INFILE, { 'waitUntil' : 'networkidle0'});
     await page.pdf({ path: process.argv[2] + '.raw.pdf' });
 
     await page.pdf({ 
